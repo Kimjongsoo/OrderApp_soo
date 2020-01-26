@@ -28,6 +28,7 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
     final int REQUEST_PERMISSIONS_FOR_LAST_KNOWN_LOCATION=0;
     private GoogleMap mMap;
     Location mCurrentLocation;
+    static String markermenu = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                     case 0:
 
                     case 1:
-                        Intent intent =new Intent(getApplicationContext(),JoinActivity.class);
+                        Intent intent =new Intent(getApplicationContext(),Tab_menu.class);
                         startActivity(intent);
                     case 2:
                 }
@@ -66,7 +67,15 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
+                int pos = tab.getPosition();
+                switch (pos){
+                    case 0:
 
+                    case 1:
+                        Intent intent =new Intent(getApplicationContext(),Tab_menu.class);
+                        startActivity(intent);
+                    case 2:
+                }
             }
         });
     }
@@ -116,21 +125,49 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
-        setMarker();
+        setMarker(markermenu);
 
     }
 
-    public void setMarker(){
-        MarkerOptions markerOptions = new MarkerOptions();
+        public void setMarker(String str){
+            MarkerOptions markerOptions = new MarkerOptions();
 
-        markerOptions.position(new LatLng(37.636617,127.022867)).title("홍콩반점").snippet("중식");
-        mMap.addMarker(markerOptions);
-        markerOptions.position(new LatLng(37.644413,127.028375)).title("수유손칼국수").snippet("한식");
-        mMap.addMarker(markerOptions);
-        markerOptions.position(new LatLng(37.639059,127.024158)).title("상미규카츠").snippet("일식");
-        mMap.addMarker(markerOptions);
-        markerOptions.position(new LatLng(37.638514,127.024926)).title("석관동떡볶이").snippet("한식");
-        mMap.addMarker(markerOptions);
+
+            if(str.equals("한식")){
+                markerOptions.position(new LatLng(37.644413,127.028375)).title("수유손칼국수").snippet("한식");
+                mMap.addMarker(markerOptions);
+                markerOptions.position(new LatLng(37.638514,127.024926)).title("석관동떡볶이").snippet("한식");
+                mMap.addMarker(markerOptions);
+
+            }
+            else if(str.equals("중식")){
+                markerOptions.position(new LatLng(37.636617,127.022867)).title("홍콩반점").snippet("중식");
+                mMap.addMarker(markerOptions);
+
+            }
+            else if(str.equals("일식")){
+                markerOptions.position(new LatLng(37.639059,127.024158)).title("상미규카츠").snippet("일식");
+                mMap.addMarker(markerOptions);
+
+            }
+            else{
+                markerOptions.position(new LatLng(37.644413,127.028375)).title("수유손칼국수").snippet("한식");
+                mMap.addMarker(markerOptions);
+                markerOptions.position(new LatLng(37.638514,127.024926)).title("석관동떡볶이").snippet("한식");
+                mMap.addMarker(markerOptions);
+
+                markerOptions.position(new LatLng(37.636617,127.022867)).title("홍콩반점").snippet("중식");
+                mMap.addMarker(markerOptions);
+
+                markerOptions.position(new LatLng(37.639059,127.024158)).title("상미규카츠").snippet("일식");
+                mMap.addMarker(markerOptions);
+            }
+
+
+
+
+
+
 
     }
 }
