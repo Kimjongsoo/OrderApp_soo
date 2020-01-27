@@ -7,77 +7,99 @@
     android:layout_marginBottom="70dp"
     tools:context=".Tab_menu">
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:columnCount="2"
+        android:rowCount="2"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:padding="1dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/korea"
                 android:layout_width="wrap_content"
-                android:layout_height="115dp"
-                android:scaleType="fitXY"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:adjustViewBounds="true"
                 android:src="@drawable/kor" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="한식" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:padding="1dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/china"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:adjustViewBounds="true"
                 android:src="@drawable/chi" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="중식" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:padding="1dp">
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/japan"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:scaleType="fitXY"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:adjustViewBounds="true"
                 android:src="@drawable/jap" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="일식" />
         </LinearLayout>
-    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/weston_food"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/w_food" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="양식" />
+        </LinearLayout>
+    </GridLayout>
 </LinearLayout>

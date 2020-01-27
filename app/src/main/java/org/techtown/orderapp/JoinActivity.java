@@ -42,11 +42,11 @@ public class JoinActivity extends AppCompatActivity {
 
         user=new User();
 
-        editText_id=findViewById(R.id.join_id);
-        editText_pw=findViewById(R.id.join_pw);
-        editText_name=findViewById(R.id.join_name);
-        editText_birth=findViewById(R.id.join_birth);
-        checkBtn=findViewById(R.id.join_check);
+        editText_id = findViewById(R.id.join_id);
+        editText_pw = findViewById(R.id.join_pw);
+        editText_name = findViewById(R.id.join_name);
+        editText_birth = findViewById(R.id.join_birth);
+        checkBtn = findViewById(R.id.join_check);
 
         editText_id.addTextChangedListener(new TextWatcher() {
             @Override
