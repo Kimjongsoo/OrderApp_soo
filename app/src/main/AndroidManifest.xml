@@ -24,7 +24,11 @@
         </activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".JoinActivity" />
-        <activity android:name=".Tab_menu"></activity>
+        <activity android:name=".Tab_menu" />
+        <activity android:name=".Tab_review" />
+        <activity android:name=".UploadActivity" />
+        <activity android:name=".RiviewActivity" />
+        <activity android:name=".ReviewActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -29,6 +31,7 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     Location mCurrentLocation;
     static String markermenu = "";
+    Button Upload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                         Intent intent =new Intent(getApplicationContext(),Tab_menu.class);
                         startActivity(intent);
                     case 2:
+                        Intent intent2=new Intent(getApplicationContext(),Tab_review.class);
+                        startActivity(intent2);
                 }
             }
 
@@ -75,9 +80,21 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                         Intent intent =new Intent(getApplicationContext(),Tab_menu.class);
                         startActivity(intent);
                     case 2:
+                        Intent intent2=new Intent(getApplicationContext(),Tab_review.class);
+                        startActivity(intent2);
                 }
             }
         });
+
+        Upload = (Button)findViewById(R.id.Upload);
+        Upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent UploadIntent = new Intent(getApplicationContext(),UploadActivity.class);
+                startActivity(UploadIntent);
+            }
+        });
+
     }
 
     private boolean checkLocationPermissions() {
@@ -150,6 +167,10 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.addMarker(markerOptions);
 
             }
+            else if(str.equals("양식")){
+                markerOptions.position(new LatLng(37.638551,127.025352)).title("올뜨레마레").snippet("양식");
+                mMap.addMarker(markerOptions);
+            }
             else{
                 markerOptions.position(new LatLng(37.644413,127.028375)).title("수유손칼국수").snippet("한식");
                 mMap.addMarker(markerOptions);
@@ -160,6 +181,9 @@ public class HomeActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.addMarker(markerOptions);
 
                 markerOptions.position(new LatLng(37.639059,127.024158)).title("상미규카츠").snippet("일식");
+                mMap.addMarker(markerOptions);
+
+                markerOptions.position(new LatLng(37.638551,127.025352)).title("올뜨레마레").snippet("양식");
                 mMap.addMarker(markerOptions);
             }
 

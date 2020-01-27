@@ -18,11 +18,9 @@ public class Tab_menu extends AppCompatActivity {
         imageButton.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HomeActivity.markermenu="한식";
-                Intent intent =new Intent(getApplicationContext(),HomeActivity.class);
+                HomeActivity.markermenu = "한식";
+                Intent intent =new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
-//                HomeActivity homeActivity =new HomeActivity();
-//                homeActivity.setMarker("한식");
             }
         });
 
@@ -30,20 +28,31 @@ public class Tab_menu extends AppCompatActivity {
         imageButton1.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HomeActivity.markermenu="중식";
-                Intent intent =new Intent(getApplicationContext(),HomeActivity.class);
+                HomeActivity.markermenu = "중식";
+                Intent intent =new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
             }
         });
+
         ImageButton imageButton2 = (ImageButton)findViewById(R.id.japan);
         imageButton2.setOnClickListener(new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HomeActivity.markermenu="일식";
-                Intent intent =new Intent(getApplicationContext(),HomeActivity.class);
+                HomeActivity.markermenu = "일식";
+                Intent intent =new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
             }
-});
+        });
+
+        ImageButton imageButton3 = (ImageButton)findViewById(R.id.weston_food);
+        imageButton3.setOnClickListener(new ImageButton.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HomeActivity.markermenu = "양식";
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
